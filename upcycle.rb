@@ -1,20 +1,26 @@
 require_relative "apparel"
 # Program that takes user input to determine if fabric gets upcycled or goes to a landfill
 class Items
-  items = {1 => "pants", 2 => "dress", 3 => "coat", 4 => "tee", 5 => "shorts", 6 => "tote"} 
-
-  item = items.values
-  an_item = item[rand(item.size)]
-
-
+  def initilize
+    @items = {1 => "pants", 2 => "dress", 3 => "coat", 4 => "tee", 5 => "shorts", 6 => "tote"} 
+    item = items.values
+    an_item = item[rand(item.size)]
+  end
+  
 #pp item
 # Prompt that tells user they're speaaking to a clothing item and what the item is 
   def upcycle_me_please
-  puts "Hello! I'm a #{an_item}! Would you like to throw me away, or upcycle me? (yes/no)"
-  upcycle_maybe = gets.chomp
+    puts "Hello! I'm a #{an_item}! Would you like to throw me away, or upcycle me? (yes/no)"
+    upcycle_maybe = gets.chomp
 
-  if upcycle_maybe == "yes"
+    if upcycle_maybe == "no"
+      @landfill = 
 
+  def new_item
+    waste = 11,300,000
+    if items.key <= 3
+          
+    elsif if items.key > 3 
   
 
 # Prompt that gives user a choice to upcycle the item into something else or throw it away
