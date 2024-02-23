@@ -4,7 +4,7 @@ class UpcycleMaybe
 
   def initialize(upcycled, landfill)
     @upcycled = upcycled
-    @landfill = landfill
+    @landfill = []
   end
 
   
