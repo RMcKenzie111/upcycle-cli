@@ -2,9 +2,10 @@ require_relative "apparel"
 # Program that takes user input to determine if fabric gets upcycled or goes to a landfill
 class Items
   def initilize
-    @items = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
+    items = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
     item = items.values
     an_item = item[rand(item.size)]
+    return an_item
   end
   
 #pp item
@@ -15,7 +16,7 @@ class Items
 
     if upcycle_maybe == "no"
       item_weight = an_item.key(an_item)
-      @landfill = #need empty arraay add item to landfill array need syntax
+      pp "You've added landfill"  #need empty arraay add item to landfill array need syntax
 
   #might not need this
     def new_item
