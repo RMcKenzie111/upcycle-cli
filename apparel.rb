@@ -1,5 +1,5 @@
 # this is where the variables that interact for user input should be; these are the output
-class UpcycleMaybe
+class Actions
   attr_accessor :upcycle, :landfill
 
   def initialize(upcycle, landfill)
@@ -8,9 +8,9 @@ class UpcycleMaybe
   end
 
   def waste
-    "You've added #{item_weight} to 92 million tons of clothig wasate"
+    pp "By throwing away #{user_item} you've added #{landfill} to 92 million tons of annual clothig waste."
   end
 
   def upcycled
-    "Congrats! You've upcycled #{an_item} into a #{an_item}."
+    pp "Congrats! You've upcycled #{user_item} into a #{upcycled}. It will be added to the 1% of items that are transformed each year."
   end
