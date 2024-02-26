@@ -13,3 +13,4 @@ class UpcycleMaybe
 
   def upcycled
     "Congrats! You've upcycled #{an_item} into a #{an_item}."
+  end
