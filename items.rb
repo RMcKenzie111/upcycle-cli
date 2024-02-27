@@ -22,19 +22,20 @@ class Items
     puts "Do you want to upcycle it?(yes/no)"
     user_action = gets.chomp
     if user_action == "yes"
-        self.upcycled = an_item
-        puts "Congrats! You've upcycled #{self.pick_item} into a #{self.upcycled}. It will be added to the 1% of items that are transformed each year."
+        self.upcycle = an_item
+        puts "Congrats! You've upcycled #{self.pick_item} into a #{self.upcycle}. It will be added to the 1% of items that are transformed each year."
       elsif user_action == "no"
         need_weight = items.key(pick_item)
         self.landfill = need_weight
         puts "By throwing away #{self.pick_item} you've added #{self.landfill} ounces to 92 million tons of annual clothing waste."
+        bonus_recycle()
       else
         puts "Wrong user input, please try again"
       end
   end
 
   def bonus_recycle
-    puts "Hello, remeber that #{@pick_item} you threw away adding #{@landfill}? Let's recycle it!"
+    puts "Hello, remeber that #{@pick_item} you threw away adding #{@landfill} ounces of landfill waste? Let's recycle it!"
     puts "What do you want the #{@pick_item} to be?"
     self.recycled = gets.chomp
     puts "You've successgully turned #{self.statement}"
