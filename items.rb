@@ -1,13 +1,14 @@
 #require "./apparel.rb"
 # Program that takes user input to determine if fabric gets upcycled or goes to a landfill
 class Items
-  attr_accessor :upcycle, :landfill, :new_item, :recycled
+  attr_accessor :upcycle, :landfill, :new_item, :recycled, :pick_item
 
   def initialize
     @upcycle = upcycle
     @landfill = landfill
     @new_item = new_item
     @recycled = recycled
+    @pick_item = pick_item
   end
   
 #pp item
@@ -17,33 +18,30 @@ class Items
     item = items.values
     an_item = item[rand(item.size)]
     puts "Hello! Pick an item: pants, dress, coat, shirt, shorts, tote"
-    user_item = gets.chomp
+    self.pick_item = gets.chomp
     puts "Do you want to upcycle it?(yes/no)"
     user_action = gets.chomp
     if user_action == "yes"
-        upcycled = an_item
-        puts "Congrats! You've upcycled #{user_item} into a #{@upcycled}. It will be added to the 1% of items that are transformed each year."
+        self.upcycled = an_item
+        puts "Congrats! You've upcycled #{self.pick_item} into a #{self.upcycled}. It will be added to the 1% of items that are transformed each year."
       elsif user_action == "no"
-        need_weight = items.key(user_item)
-        landfill = need_weight
-        puts "By throwing away #{user_item} you've added #{@landfill} ounces to 92 million tons of annual clothing waste."
+        need_weight = items.key(pick_item)
+        self.landfill = need_weight
+        puts "By throwing away #{self.pick_item} you've added #{self.landfill} ounces to 92 million tons of annual clothing waste."
       else
         puts "Wrong user input, please try again"
       end
   end
 
   def bonus_recycle
-    puts "Hello, you're in a landfill"
-    puts "What clothing item would you like to take out of the landfill?"
-    self.clothing_item = gets.chomp
-    puts "Great! we can now recycle the #{self.clothing_item} into something else!"
-    puts "What do you want the #{self.clothing_item} to be?"
+    puts "Hello, remeber that #{@pick_item} you threw away adding #{@landfill}? Let's recycle it!"
+    puts "What do you want the #{@pick_item} to be?"
     self.recycled = gets.chomp
     puts "You've successgully turned #{self.statement}"
   end
 
   def statement
-      "the #{self.clothing_item} into a(n) #{self.recycled}!"
+      "the #{@pick_item} into a(n) #{@recycled}!"
   end
 end
 
