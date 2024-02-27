@@ -26,7 +26,7 @@ class Items
         pp "Wrong user input, please try again"
       end
   end
-
+end
 
 
 # Prompt that gives user a choice to upcycle the item into something else or throw it away
