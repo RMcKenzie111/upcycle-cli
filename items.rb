@@ -1,11 +1,11 @@
-require "./apparel.rb"
+#require "./apparel.rb"
 # Program that takes user input to determine if fabric gets upcycled or goes to a landfill
 class Items
-  def initilize
-    items = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
-    item = items.values
-    an_item = item[rand(item.size)]
-    #item_weight = an_item.key(an_item)
+  attr_accessor :upcycle, :landfill
+
+  def initialize
+    @upcycle = upcycle
+    @landfill = landfill
   end
   
 #pp item
@@ -19,14 +19,12 @@ class Items
     puts "Do you want to upcycle it?(yes/no)"
     user_action = gets.chomp
     if user_action == "yes"
-        items.has_key?(user_item)
         upcycled = an_item
-        upcycled_item()
+        puts "Congrats! You've upcycled #{user_item} into a #{@upcycled}. It will be added to the 1% of items that are transformed each year."
       elsif user_action == "no"
-        find_weight = items.has_key(user_item)
-        weight = find_weight[]
-        landfill = item_weight
-        puts wasted_item
+        need_weight = items.key(user_item)
+        landfill = need_weight
+        puts "By throwing away #{user_item} you've added #{@landfill} ounces to 92 million tons of annual clothing waste."
       else
         puts "Wrong user input, please try again"
       end

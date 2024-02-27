@@ -1,4 +1,6 @@
 # this is where the variables that interact for user input should be; these are the output
+
+
 class Actions
   attr_accessor :upcycle, :landfill
 
@@ -7,7 +9,7 @@ class Actions
     @landfill = landfill
   end
 
-  def upcyle_or_waste
+  def waste
     puts "By throwing away #{user_item} you've added #{landfill} to 92 million tons of annual clothig waste."
   end
 
