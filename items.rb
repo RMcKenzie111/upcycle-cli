@@ -39,8 +39,12 @@ class Items
     puts "Great! we can now recycle the #{self.clothing_item} into something else!"
     puts "What do you want the #{self.clothing_item} to be?"
     self.recycled = gets.chomp
-    puts "You've successgully turned the #{self.clothing_item} into a(n) #{self.recycled}!"
-    end
+    puts "You've successgully turned #{self.statement}"
+  end
+
+  def statement
+      "the #{self.clothing_item} into a(n) #{self.recycled}!"
+  end
 end
 
 
