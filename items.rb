@@ -1,11 +1,13 @@
 #require "./apparel.rb"
 # Program that takes user input to determine if fabric gets upcycled or goes to a landfill
 class Items
-  attr_accessor :upcycle, :landfill
+  attr_accessor :upcycle, :landfill, :new_item, :recycled
 
   def initialize
     @upcycle = upcycle
     @landfill = landfill
+    @new_item = new_item
+    @recycled = recycled
   end
   
 #pp item
@@ -29,6 +31,16 @@ class Items
         puts "Wrong user input, please try again"
       end
   end
+
+  def bonus_recycle
+    puts "Hello, you're in a landfill"
+    puts "What clothing item would you like to take out of the landfill?"
+    self.clothing_item = gets.chomp
+    puts "Great! we can now recycle the #{self.clothing_item} into something else!"
+    puts "What do you want the #{self.clothing_item} to be?"
+    self.recycled = gets.chomp
+    puts "You've successgully turned the #{self.clothing_item} into a(n) #{self.recycled}!"
+    end
 end
 
 
