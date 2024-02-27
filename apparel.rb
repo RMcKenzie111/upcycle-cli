@@ -14,3 +14,4 @@ class Actions
   def upcycled_item
     pp "Congrats! You've upcycled #{user_item} into a #{upcycled}. It will be added to the 1% of items that are transformed each year."
   end
+end
