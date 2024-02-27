@@ -1,4 +1,4 @@
-require_relative "apparel"
+require_relative "./apparel.rb"
 # Program that takes user input to determine if fabric gets upcycled or goes to a landfill
 class Items
   def initilize
