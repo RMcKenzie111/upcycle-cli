@@ -5,28 +5,29 @@ class Items
     items = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
     item = items.values
     an_item = item[rand(item.size)]
-    return an_item
+    item_weight = an_item.key(an_item)
   end
   
 #pp item
 # Prompt that tells user they're speaaking to a clothing item and what the item is 
   def upcycle_me_please
-    puts "Hello! Would you like to throw away or upcycle an item? (yes/no)"
-    upcycle_maybe = gets.chomp
+    puts "Hello! Pick an item: pants, dress, coat, shirt, shorts, tote"
+    user_item = gets.chomp
+    puts "Do you want to upcycle it?(yes/no)"
+    user_action = gets.chomp
+    if user_action == "yes"
+      elsif items.has_key?(user_item)
+        upcycled = an_item
+        return upcycled_item
+      elsif user_action == "no"
+        landfill = item_weight
+        return wasted_item
+      else
+        pp "Wrong user input, please try again"
+      end
+  end
 
-    if upcycle_maybe == "no"
-      item_weight = an_item.key(an_item)
-      pp "Enter item going to the landfill"
-      landfill = gets.chomp
-      return waste  #need empty arraay add item to landfill array need syntax
-    elif upcycle_maybe == "yes"
-      return upcycled
-    end
 
-    def item_track
-      puts "Total items upcycled and total items wasted"
-      Items.new(upcycle, landfill)
-  
 
 # Prompt that gives user a choice to upcycle the item into something else or throw it away
 
