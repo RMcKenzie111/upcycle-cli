@@ -1,16 +1,16 @@
 require "./apparel.rb"
 # Program that takes user input to determine if fabric gets upcycled or goes to a landfill
-#class Items
-  #def initilize
+class Items
+  def initilize
     items = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
     item = items.values
     an_item = item[rand(item.size)]
     #item_weight = an_item.key(an_item)
-  #end
+  end
   
 #pp item
 # Prompt that tells user they're speaaking to a clothing item and what the item is 
-  #def upcycle_me_please
+  def upcycle_me_please
     puts "Hello! Pick an item: pants, dress, coat, shirt, shorts, tote"
     user_item = gets.chomp
     puts "Do you want to upcycle it?(yes/no)"
@@ -27,8 +27,8 @@ require "./apparel.rb"
       else
         puts "Wrong user input, please try again"
       end
-  #end
-#end
+  end
+end
 
 
 # Prompt that gives user a choice to upcycle the item into something else or throw it away
