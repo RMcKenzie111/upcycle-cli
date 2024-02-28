@@ -26,16 +26,17 @@ class Items
       self.upcycle = an_item
       puts "Congrats! You've upcycled #{self.pick_item} into a #{self.upcycle}. It will be added to the 1% of items that are transformed each year."
     when "no"
-      to_the_fill()
+      to_landfill()
       #else
        # puts "Wrong user input, please try again"
     end
   end
   
-  def to_the_fill
-    need_weight = items.key(pick_item)
+  def to_landfill
+    itemss = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
+    need_weight = itemss.key(@pick_item)
     self.landfill = need_weight
-    puts "By throwing away #{self.pick_item} you've added #{self.landfill} ounces to 92 million tons of annual clothing waste."
+    puts "By throwing away #{@pick_item} you've added #{self.landfill} ounces to 92 million tons of annual clothing waste."
     bonus_recycle()
   end
 
