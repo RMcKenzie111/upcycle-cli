@@ -9,7 +9,7 @@ class Items
     @recycled = recycled
     @pick_item = pick_item
   end
-   
+  
   def upcycle_me_please
     itemss = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
     item = itemss.values

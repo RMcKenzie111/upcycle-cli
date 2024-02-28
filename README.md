@@ -1,5 +1,5 @@
-# ruby-cli-template
+# Upcycle CLI
 
-Use this repository as a template for your Ruby CLI (command line interface) project.
+A command line interface app that determines if a clothing item gets up-cycled, goes to a landfill, or is recycled.
 
 - Ruby version: `3.2.1`
