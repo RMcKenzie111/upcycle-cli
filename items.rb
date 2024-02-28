@@ -14,27 +14,33 @@ class Items
 #pp item
 # Prompt that tells user they're speaaking to a clothing item and what the item is 
   def upcycle_me_please
-    items = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
-    item = items.values
+    itemss = {20 => "pants", 10 => "dress", 12 => "coat", 5 => "shirt", 7 => "shorts", 3 => "tote"} 
+    item = itemss.values
     an_item = item[rand(item.size)]
     puts "Hello! Pick an item: pants, dress, coat, shirt, shorts, tote"
     self.pick_item = gets.chomp
     puts "Do you want to upcycle it?(yes/no)"
     user_action = gets.chomp
-    if user_action == "yes"
-        self.upcycle = an_item
-        puts "Congrats! You've upcycled #{self.pick_item} into a #{self.upcycle}. It will be added to the 1% of items that are transformed each year."
-      elsif user_action == "no"
-        need_weight = items.key(pick_item)
-        self.landfill = need_weight
-        puts "By throwing away #{self.pick_item} you've added #{self.landfill} ounces to 92 million tons of annual clothing waste."
-        bonus_recycle()
-      else
-        puts "Wrong user input, please try again"
-      end
+    case user_action
+    when "yes"
+      self.upcycle = an_item
+      puts "Congrats! You've upcycled #{self.pick_item} into a #{self.upcycle}. It will be added to the 1% of items that are transformed each year."
+    when "no"
+      to_the_fill()
+      #else
+       # puts "Wrong user input, please try again"
+    end
+  end
+  
+  def to_the_fill
+    need_weight = items.key(pick_item)
+    self.landfill = need_weight
+    puts "By throwing away #{self.pick_item} you've added #{self.landfill} ounces to 92 million tons of annual clothing waste."
+    bonus_recycle()
   end
 
   def bonus_recycle
+    puts "..."
     puts "Hello, remeber that #{@pick_item} you threw away adding #{@landfill} ounces of landfill waste? Let's recycle it!"
     puts "What do you want the #{@pick_item} to be?"
     self.recycled = gets.chomp
