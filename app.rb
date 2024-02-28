@@ -1,5 +1,7 @@
 require "./items.rb"
 class Run
-  all_items = Items.new
-  all_items.upcycle_me_please
+  def run_items
+    all_items = Items.new
+    all_items.upcycle_me_please
+  end
 end
